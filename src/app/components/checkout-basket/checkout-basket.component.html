@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title"><b>Your basket</b></h4>
+    <div class="basketData">
+      <div *ngFor="let food of selectedFoods">
+        <span>{{ food?.name }}</span>
+        <span>{{ food?.price }}</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="checkout-btn">
+    <button class="btn btn-success">
+      <span>Checkout</span>
+      <span>$ {{ getTotalPrice() || 0}}</span>
+    </button>
+  </div>
+</div>

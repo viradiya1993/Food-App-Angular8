@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div *ngFor="let food of foods" [id]="food.id">
+        <div class="col-md-12">
+          <h2>{{ food.category }}</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4" *ngFor="let dish of food.dishes">
+            <div class="card" (click)="open(dish)">
+              <div class="card-body">
+                <h5 class="card-title">{{ dish.name }}</h5>
+                <img src="../../../assets/images/food.jpeg" height="50px" width="100%">
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <p for="">$ {{ dish.price }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <app-checkout-basket></app-checkout-basket>
+    </div>
+  </div>
+</div>
